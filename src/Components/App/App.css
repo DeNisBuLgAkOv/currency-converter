@@ -1,0 +1,16 @@
+.App {
+    text-align: center;
+    margin: auto;
+    width: 400px;
+    height: 300px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: #bdb0b0;
+}
+
+.container{
+    margin: 50px 0;
+    display: flex;
+}
+
+
