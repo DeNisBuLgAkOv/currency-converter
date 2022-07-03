@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import './App.css';
 import {useDispatch, useSelector} from "react-redux";
 import {
@@ -19,12 +19,13 @@ function App() {
 
   const dispatch = useDispatch<any>()
 
-  const firstCurrencySelector=(count:string,currency:string)=>{
+  const firstCurrencySelector=useCallback( (count:string,currency:string)=>{
       dispatch(GetCurrencyOneThunk(count,currency,selectSecond))
-  }
-  const secondCurrencySelector=(count:string,currency:string)=>{
+  },[dispatch,selectSecond])
+  const secondCurrencySelector=useCallback( (count:string,currency:string)=>{
    dispatch(GetCurrencyTwoThunk(count,currency,selectFirst))
-  }
+  },[dispatch,selectFirst])
+
 
   return (
     <div className="App">

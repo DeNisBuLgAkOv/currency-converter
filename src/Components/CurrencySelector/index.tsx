@@ -9,7 +9,7 @@ type PropsType={
   callback:(count:string,currency:string)=>void
 }
 
-const CurrencySelector= (props:PropsType) => {
+const CurrencySelector = React.memo( (props:PropsType) => {
   const [currency,setCurrency]= useState<string>(props.startSelect)
   const [count,setCount]=useState<string>('')
 
@@ -48,6 +48,6 @@ const CurrencySelector= (props:PropsType) => {
       </select>
     </div>
   );
-};
+});
 
 export default CurrencySelector;
